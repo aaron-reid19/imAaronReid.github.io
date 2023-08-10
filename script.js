@@ -6,6 +6,10 @@ function convert(form){
         cad.focus();
         return false;
     }
+    else if (isNaN(parseFloat(cad.value))) {
+        alert('Please enter a valid number');
+        cad.focus();
+    }
     else{
        var usd = parseFloat(cad.value) * 1.33;
        display(usd);
@@ -14,7 +18,7 @@ function convert(form){
 
 function display(value){
     var displayDiv = document.querySelector('.display');
-    displayDiv.textContent = 'Canadian Value: $' + value.toFixed(2)
+    displayDiv.textContent = 'American Value: $' + value.toFixed(2)
 }
 
 function reset(){
